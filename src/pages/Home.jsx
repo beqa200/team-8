@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
+import redBerryIcon from "/images/LOGO-02 3.png";
 
 export default function Home() {
   return (
-    <div>
-      <button>
-        <Link to={"/userInfoPage"}>რეზიუმეს დამატება</Link>
-      </button>
-    </div>
+    <>
+      <section>
+        <header>
+          <img src={redBerryIcon} alt="redBerryIcon" />
+        </header>
+
+        <Link to={"/userInfoValidation"}>რეზიუმეს დამატება</Link>
+      </section>
+    </>
   );
 }
