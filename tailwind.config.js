@@ -18,6 +18,9 @@ export default {
       lineHeight: {
         base: "21px",
       },
+      placeholderColor: {
+        marginTop: "150px",
+      },
     },
   },
   plugins: [],
