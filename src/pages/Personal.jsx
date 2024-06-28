@@ -13,13 +13,13 @@ export default function Personal() {
     >
       <Header navigate={navigate} />
       <main className="mt-[69px]">
-        <form action="">
+        <form>
           <div className="flex">
             <div>
               <p className="font-medium	 mb-[8px]">სახელი</p>
               <input
                 type="text"
-                className="h-[48px] w-[339px] flex p-4 border border-[#BCBCBC] rounded mr-[100px] mb-[8px]"
+                className="h-[48px] w-[339px]  p-4 border border-[#BCBCBC] rounded mr-[100px] mb-[8px]"
                 placeholder="ნიკოლოზ"
               />
               <p className="text-customGray font-helvetica-neue font-light text-base leading-base">
@@ -78,6 +78,7 @@ export default function Personal() {
           უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს
         </p>
         <button
+          onClick={() => navigate("/experience")}
           className="float-right mr-[70px]
         w-[151px] h-[48px] rounded bg-[#6B40E3]
         text-white text-base mb-[65px]

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import arrowImg from "/images/Group 4.svg";
 
 export default function Header({ navigate }) {
