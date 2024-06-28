@@ -1,7 +1,15 @@
 import Header from "../components/Header";
 import arrowImg from "/images/Group 4.svg";
+import { useState } from "react";
 
 export default function Experience() {
+  const [positionInputValue, setpositionInputValue] = useState("");
+  const [employerInputValue, setEmployerInputValue] = useState("");
+  const [descriptionInputValue, setDescriptionInputValue] =
+    useState("");
+  const [startCalendarInputValue, setStartCalendarInputValue] =
+    useState("");
+  console.log(startCalendarInputValue);
   return (
     <section
       className="h-[100vh] bg-[#F9F9F9]
@@ -17,6 +25,9 @@ export default function Experience() {
               თანამდებობა
             </p>
             <input
+              onChange={(event) =>
+                setpositionInputValue(event.target.value)
+              }
               className="h-[48px] w-[766px]  p-4 border border-[#BCBCBC] rounded mb-[8px]"
               type="text"
               placeholder="დეველოპერი, დიზაინერი, ა.შ."
@@ -28,6 +39,9 @@ export default function Experience() {
           <div>
             <p className="font-medium mb-[8px]">დამსაქმებელი</p>
             <input
+              onChange={(event) =>
+                setEmployerInputValue(event.target.value)
+              }
               type="text"
               className="h-[48px] w-[766px]  p-4 border border-[#BCBCBC] rounded mb-[8px]"
               placeholder="დამსაქმებელი"
@@ -40,6 +54,9 @@ export default function Experience() {
             <div>
               <p className="font-medium mb-[8px]">დაწყების რიცხვი</p>
               <input
+                onChange={(event) =>
+                  setStartCalendarInputValue(event.target.value)
+                }
                 type="date"
                 className="h-[48px] w-[339px]  p-4 border border-[#BCBCBC] rounded mr-[86px] mb-[8px]"
               />
@@ -57,11 +74,14 @@ export default function Experience() {
           </div>
           <div>
             <p className="font-medium mt-[31px] mb-[8px]">აღწერა</p>
-            <input
-              type="text"
+
+            <textarea
+              onChange={(event) =>
+                setDescriptionInputValue(event.target.value)
+              }
               className="w-[765px] h-[123px] p-4 border border-[#BCBCBC] rounded mb-[50px]"
               placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-            />
+            ></textarea>
           </div>
         </form>
         <hr className="border-[#C1C1C1]  mr-[82px] mb-[48px]"></hr>
