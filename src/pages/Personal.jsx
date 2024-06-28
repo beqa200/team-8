@@ -1,6 +1,9 @@
-import arrowImg from "/images/Group 4.svg";
+import { useNavigate } from "react-router-dom";
+
+import Header from "../components/Header";
 
 export default function Personal() {
+  const navigate = useNavigate();
   return (
     <section
       className="h-[100vh] bg-[#F9F9F9]
@@ -8,26 +11,7 @@ export default function Personal() {
     w-[1098px]
     "
     >
-      <header className="relative">
-        <div>
-          <img
-            src={arrowImg}
-            alt="arrowImg"
-            className="absolute ml-[-100px]"
-          />
-        </div>
-
-        <div className="flex justify-between items-center mb-[12px]">
-          <h1 className="text-[24px] font-extrabold font-helvetica-neue">
-            პირადი ინფო
-          </h1>
-          <p className="mr-[69px] text-[20px] font-normal font-helvetica-neue">
-            1/3
-          </p>
-        </div>
-        <hr className="border-[#1A1A1A]  mr-[70px]"></hr>
-      </header>
-
+      <Header navigate={navigate} />
       <main className="mt-[69px]">
         <form action="">
           <div className="flex">

@@ -26,7 +26,7 @@ export default function Home() {
               <img
                 src={backgroundLogo}
                 alt="backgroundLogoImg"
-                className="absolute left-[56%] top-[47%]"
+                className="absolute left-[56%] top-[47%] z-[-1]"
               />
               <div>
                 <button
