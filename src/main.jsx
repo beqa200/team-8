@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import Personal from "./pages/Personal.jsx";
-import Education from "./pages/Education.jsx";
-import Experience from "./pages/Experience.jsx";
-import Resume from "./pages/Resume.jsx";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home.jsx";
+import Personal from "./Pages/Personal.jsx";
+import Education from "./Pages/Education.jsx";
+import Experience from "./Pages/Experience.jsx";
+import Resume from "./Pages/Resume.jsx";
 
 const router = createBrowserRouter([
   {
