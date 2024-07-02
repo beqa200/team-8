@@ -3,14 +3,39 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Info from "../components/Info";
 
-export default function Personal() {
+export default function Personal({
+  nameValue,
+  setNameValue,
+  lastNameValue,
+  setLastNameValue,
+  nameDescriptionInputValue,
+  setNameDescriptionInputValue,
+  emailInputValue,
+  setEmailInputValue,
+  mobileInputValue,
+  setMobileInputValue,
+  image,
+  setImage,
+  positionInputValue,
+  employerInputValue,
+  experienceDescriptionInputValue,
+  startDateInputValue,
+  endDateInputValue,
+  schoolInputValue,
+  degreeInputValue,
+  educationEndDateInputValue,
+  educationDescriptionInputValue,
+  positionInputValue2,
+  employerInputValue2,
+  experienceDescriptionInputValue2,
+  startDateInputValue2,
+  endDateInputValue2,
+  schoolInputValue2,
+  degreeInputValue2,
+  educationEndDateInputValue2,
+  educationDescriptionInputValue2,
+}) {
   const navigate = useNavigate();
-
-  const [nameValue, setNameValue] = useState("");
-  const [lastNameValue, setLastNameValue] = useState("");
-  const [descriptionInputValue, setDescriptionInputValue] = useState("");
-  const [emailInputValue, setEmailInputValue] = useState("");
-  const [mobileInputValue, setMobileInputValue] = useState("");
 
   const [nameError, setNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
@@ -74,6 +99,18 @@ export default function Personal() {
       navigate("/experience");
     }
   };
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      localStorage.setItem("image", reader.result);
+      setImage(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  console.log(image);
 
   return (
     <div className="flex">
@@ -139,6 +176,7 @@ export default function Personal() {
             <div className="flex mt-[46px]">
               <p className="text-lg font-medium">პირადი ფოტოს ატვირთვა</p>
               <label
+                onChange={handleImageChange}
                 htmlFor="fileInput"
                 className="ml-[19px] w-[107px] h-[27px] bg-[#0E80BF] border rounded text-white text-sm mb-[46px] flex items-center justify-center cursor-pointer"
               >
@@ -149,10 +187,12 @@ export default function Personal() {
 
             <p className="font-medium mb-3">ჩემ შესახებ (არასავალდებულო)</p>
             <textarea
-              onChange={(event) => setDescriptionInputValue(event.target.value)}
-              value={descriptionInputValue}
+              onChange={(event) =>
+                setNameDescriptionInputValue(event.target.value)
+              }
+              value={nameDescriptionInputValue}
               className={`w-[775px] h-[123px] outline-none p-4 border rounded mb-[33px] ${
-                descriptionInputValue.trim().length !== 0
+                nameDescriptionInputValue.trim().length !== 0
                   ? "border-[#98e37e]"
                   : "border-[#BCBCBC]"
               }`}
@@ -223,7 +263,26 @@ export default function Personal() {
         lastNameValue={lastNameValue}
         emailInputValue={emailInputValue}
         mobileInputValue={mobileInputValue}
-        descriptionInputValue={descriptionInputValue}
+        nameDescriptionInputValue={nameDescriptionInputValue}
+        image={image}
+        positionInputValue={positionInputValue}
+        employerInputValue={employerInputValue}
+        experienceDescriptionInputValue={experienceDescriptionInputValue}
+        startDateInputValue={startDateInputValue}
+        endDateInputValue={endDateInputValue}
+        schoolInputValue={schoolInputValue}
+        degreeInputValue={degreeInputValue}
+        educationEndDateInputValue={educationEndDateInputValue}
+        educationDescriptionInputValue={educationDescriptionInputValue}
+        positionInputValue2={positionInputValue2}
+        employerInputValue2={employerInputValue2}
+        experienceDescriptionInputValue2={experienceDescriptionInputValue2}
+        startDateInputValue2={startDateInputValue2}
+        endDateInputValue2={endDateInputValue2}
+        schoolInputValue2={schoolInputValue2}
+        degreeInputValue2={degreeInputValue2}
+        educationEndDateInputValue2={educationEndDateInputValue2}
+        educationDescriptionInputValue2={educationDescriptionInputValue2}
       />
     </div>
   );
